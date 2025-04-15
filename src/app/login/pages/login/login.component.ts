@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { LoadFormsService } from '../../../core/services/load-forms.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup | undefined;
+
+  constructor(private loadFormService: LoadFormsService) { }
 
   ngOnInit(): void {
+    this.loginForm = this.loadFormService.createLoginForm();
+    console.log(this.loginForm);
   }
 
 }
