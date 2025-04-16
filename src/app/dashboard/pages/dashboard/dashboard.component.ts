@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { estadisticas } from '../../../data-mocks/datos-estadisticas';
+import { DataService } from '../../../core/services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,15 +28,29 @@ export class DashboardComponent implements OnInit {
     {
       key: "precio",
       description: "Precio",
-    }
+    },
+    {
+      key: "graficos",
+      description: "graficos",
+      type: "icon",
+      icon: "pi pi-chart-bar"
+    },
   ]
 
+  errorData: boolean = false;
+  loadingData: boolean = false;
   tableData: any[] = [];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.tableData = estadisticas;
+    this.useServiceData();
+  }
+
+  useServiceData(): void{
+    this.dataService.getData().subscribe((res) => {
+      this.tableData = res;
+    })
   }
 
   onRowClicked(data: any): void{

@@ -8,9 +8,9 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
-            <tr (click)="onRowSelect(product)">
+            <tr>
                 <ng-container *ngFor="let column of columns">
-                    <td class="text-center">{{product[column.key]}}</td>
+                    <td (click)="onRowSelect({product, key: column.key})" class="text-center">{{product[column.key]}}</td>
                 </ng-container>
             </tr>
         </ng-template>

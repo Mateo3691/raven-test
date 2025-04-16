@@ -25,29 +25,13 @@ export class DynamicTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // Verifico que todas las colunas pasadas tengas su equivalente en la data
-    const columnasValidas = this.columns.every((columna: any) => {
-      return this.data.some((data: any) => {
-        return Object.keys(data).includes(columna.key);
-      });
-    });
-
-    /**
-     * Esto sirve en casos donde el desarrollador por descuido pone una columna que no coincide con ninguna de las propiedades de la data
-     * Como a veces es cuestion de una letra, lo cual es dificil de notar a primera vista, esto ayuda al desarrollador a notarlo antes
-     */
-    if(!columnasValidas) {
-      console.error("Error: Las columnas no son válidas, revisá los nombres en relacion con la data");
-      return;
-    }
   }
 
   /**
-   * Método encargado de detectar cuando el usuario clickea un registro de la tabla, y emitir el mismo al componente padre
+   * Método encargado de detectar cuando el usuario clickea un registro de la tabla, y en que columna, y emitir el mismo al componente padre
    * @param registro 
    */
-  onRowSelect(registro: any) {
-    console.log("registroO",registro)
+  onRowSelect(registro: {product: any, key: string}) {
     this.rowClicked.emit(registro);
   }
 

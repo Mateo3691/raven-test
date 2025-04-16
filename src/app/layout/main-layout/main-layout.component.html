@@ -1,14 +1,19 @@
 <main class="vh-100">
     <div class="d-flex buttons-section justify-content-between align-items-center p-3 bg-light border-bottom">
         <div class="ml-5 text-muted fst-italic">
-            <h3>hola! usuario 123</h3>
+            <ng-container *ngIf="isUserLogged; else unlogedUserText">
+                <h3>
+                    Bienvenido de nuevo! {{userName}}
+                </h3>
+            </ng-container>
+            <ng-template #unlogedUserText>
+                <h3>Bienvenido! Por favor inicie sesión</h3>
+            </ng-template>
         </div>
         <div class="d-flex">
-            <button pButton pRipple type="button" styleClass="p-button-lg" icon="pi pi-palette" class="p-button-rounded p-button-secondary"></button>
-            <button pButton pRipple type="button" styleClass="p-button-lg" icon="pi pi-sign-out" class="p-button-rounded p-button-secondary"></button>
+            <button (click)="changeColorTheme()" pButton pRipple type="button" styleClass="p-button-lg" icon="pi pi-palette" class="p-button-rounded p-button-secondary"></button>
+            <button *ngIf="isUserLogged" (click)="logOutUser()" pButton pRipple type="button" styleClass="p-button-lg" icon="pi pi-sign-out" class="p-button-rounded p-button-secondary"></button>
         </div>
     </div>
-    
-        <router-outlet></router-outlet>
-    
+    <router-outlet></router-outlet>
 </main>

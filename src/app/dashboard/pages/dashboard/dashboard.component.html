@@ -6,7 +6,7 @@
                 Al clickear los registros tenes acceso a los detalles de cada uno en graficos estadísticos.
             </div>
         </div>
-        <div>
+        <div *ngIf="tableData" class="mt-5">
             <app-dynamic-table [columns]="columns" [data]="tableData" (rowClicked)="onRowClicked($event)"></app-dynamic-table>
         </div>
     </div>
