@@ -5,7 +5,7 @@ export const estadisticas = [
       cantidad: 5,
       precio: 120,
       fecha: '2024-01-15',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -20,7 +20,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Auriculares', 'Otros'],
         datasets: [
           {
@@ -37,7 +37,7 @@ export const estadisticas = [
       cantidad: 2,
       precio: 80,
       fecha: '2024-01-22',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -52,7 +52,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Teclado', 'Otros'],
         datasets: [
           {
@@ -69,7 +69,7 @@ export const estadisticas = [
       cantidad: 10,
       precio: 35,
       fecha: '2024-02-10',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -84,7 +84,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Mouse', 'Otros'],
         datasets: [
           {
@@ -101,7 +101,7 @@ export const estadisticas = [
       cantidad: 1,
       precio: 300,
       fecha: '2024-02-18',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -116,7 +116,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Monitor', 'Otros'],
         datasets: [
           {
@@ -133,7 +133,7 @@ export const estadisticas = [
       cantidad: 3,
       precio: 150,
       fecha: '2024-03-02',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -148,7 +148,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Parlantes', 'Otros'],
         datasets: [
           {
@@ -165,7 +165,7 @@ export const estadisticas = [
       cantidad: 4,
       precio: 90,
       fecha: '2024-03-25',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Enero', 'Febrero', 'Marzo'],
         datasets: [
           {
@@ -180,7 +180,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Webcam', 'Otros'],
         datasets: [
           {
@@ -197,7 +197,7 @@ export const estadisticas = [
       cantidad: 1,
       precio: 1200,
       fecha: '2024-04-05',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Febrero', 'Marzo', 'Abril'],
         datasets: [
           {
@@ -212,7 +212,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Notebook', 'Otros'],
         datasets: [
           {
@@ -229,7 +229,7 @@ export const estadisticas = [
       cantidad: 2,
       precio: 450,
       fecha: '2024-05-13',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Marzo', 'Abril', 'Mayo'],
         datasets: [
           {
@@ -244,7 +244,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Tablet', 'Otros'],
         datasets: [
           {
@@ -261,7 +261,7 @@ export const estadisticas = [
       cantidad: 1,
       precio: 220,
       fecha: '2024-06-07',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Abril', 'Mayo', 'Junio'],
         datasets: [
           {
@@ -276,7 +276,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Impresora', 'Otros'],
         datasets: [
           {
@@ -293,7 +293,7 @@ export const estadisticas = [
       cantidad: 8,
       precio: 25,
       fecha: '2024-06-28',
-      basicData: {
+      ventas_mensuales: {
         labels: ['Mayo', 'Junio', 'Julio'],
         datasets: [
           {
@@ -308,7 +308,7 @@ export const estadisticas = [
           }
         ]
       },
-      data: {
+      comp_product: {
         labels: ['Cargador', 'Otros'],
         datasets: [
           {

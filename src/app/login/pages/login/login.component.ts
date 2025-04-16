@@ -13,9 +13,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private loadFormService: LoadFormsService) { }
 
+  get formIsValid(): boolean {
+    return this.loginForm?.valid || false;
+  }
+
   ngOnInit(): void {
     this.loginForm = this.loadFormService.createLoginForm();
     console.log(this.loginForm);
+  }
+
+  loginPerson(): void {
+    console.log("loginForm", this.loginForm?.value);
   }
 
 }

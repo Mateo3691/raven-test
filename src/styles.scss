@@ -11,3 +11,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.outlet-height {
+    min-height: calc(100vh - 7rem);
+}
