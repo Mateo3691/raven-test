@@ -197,8 +197,8 @@ El cambio de tema se realiza dinámicamente aplicando una clase al `<body>`:
 3. Para hacerlo funcionar en la pantalla, se debe clickear el boton que esta al superior derecho, de esta forma se alternar los temas claro y oscuro.
 
 ### Comentarios propios
-1. Por motivos de tiempos, no pude realizar sobre el proyecto todas las optimizaciones que me hubiesen gustado, como un maayor uso de interfaces para aprovechar typesCript o 
-haber adaptado mejor al cambio de tema a algunos componentes y graficos de primeNG (cosa que ya he hehco en otros proyectos mediante ::ng-deep y al tratarse que los graficos estan hehcos en cambas). Otra cosa que me genera sensación de disconformidad con la entrega es no haber podido complejizar mas la configurabilidad de los componentes chart, ya que en primeNG cada uno tiene una forma muy peculiar de configurarse.
+1. Por motivos de tiempos, no pude realizar sobre el proyecto todas las optimizaciones que me hubiesen gustado, como un mayor uso de interfaces para aprovechar typeScript o 
+haber adaptado mejor al cambio de tema a algunos componentes y graficos de primeNG (cosa que ya he hehco en otros proyectos mediante ::ng-deep y al tratarse que los graficos estan hehcos en canvas). Otra cosa que me genera sensación de disconformidad con la entrega es no haber podido complejizar mas la configurabilidad de los componentes chart, ya que en primeNG cada uno tiene una forma muy peculiar de configurarse.
 2. Por temas de versiones y de soporte con las mismas, al correr el npm install arroja errores de vulnerabilidades, que en esta instancia de prueba no son criticas ni afectan al funcionamiento del frontend, pero que en caso de tratarse de un proyecto que puede llegar a entorno productivo es totalmente necesario corregir, con una mas profunda investigación de las versiones o, de ser necesario, nuevas dependencias.
-3. Donde mas pude customizar el componente, fue en el componente
+3. Donde mas pude customizar el componente, fue en el componente de dynamic-table
 4. Muchas gracias!
