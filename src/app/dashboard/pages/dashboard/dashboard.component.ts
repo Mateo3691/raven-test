@@ -27,19 +27,31 @@ export class DashboardComponent implements OnInit {
     },
     {
       key: "precio",
+      preffix: "$",
       description: "Precio",
     },
     {
-      key: "graficos",
-      description: "graficos",
+      key: "ventas_mensuales",
+      description: "Ventas mensuales",
       type: "icon",
       icon: "pi pi-chart-bar"
     },
+    {
+      key: "comp_product",
+      description: "Comparación",
+      type: "icon",
+      icon: "pi-eye"
+    }
   ]
 
   errorData: boolean = false;
   loadingData: boolean = false;
   tableData: any[] = [];
+  showModal: boolean = false;
+  selectedRowGraphData: any = null;
+  tipoGrafico: string = "bar";
+  modalTitle: string = "";
+  isLoading: boolean = false;
 
   constructor(private dataService: DataService) { }
 
@@ -48,13 +60,35 @@ export class DashboardComponent implements OnInit {
   }
 
   useServiceData(): void{
+    this.isLoading = true;
     this.dataService.getData().subscribe((res) => {
       this.tableData = res;
+      this.isLoading = false;
+    },  (err) => {
+      this.errorData = true;
+      this.loadingData = false;
+      console.log("Error", err);
     })
   }
 
   onRowClicked(data: any): void{
     console.log("DATA",data);
+    const {product, key} = data;
+    if(key === "ventas_mensuales" || key === "comp_product"){
+      this.modalTitle = key === "ventas_mensuales" ? "Ventas mensuales" : "Comparación de productos";
+      this.tipoGrafico = key === "ventas_mensuales" ? "bar" : "doughnut";
+      this.showModalData(product);
+    }
   }
 
+  showModalData(data: any): void{
+    const {comp_product, ventas_mensuales} = data;
+    this.selectedRowGraphData = this.tipoGrafico === "bar" ? ventas_mensuales : comp_product;
+    this.showModal = true;
+  }
+
+  closeModal(): void{
+    this.showModal = false;
+    this.selectedRowGraphData = null;
+  }
 }

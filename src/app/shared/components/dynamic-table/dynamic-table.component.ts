@@ -1,31 +1,37 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
   styleUrls: ['./dynamic-table.component.scss']
 })
-export class DynamicTableComponent implements OnInit {
+export class DynamicTableComponent {
 
   @Input() title: string = '';
   @Input() canFilter: boolean = false;
+  @Input() isGlobalFilter: boolean = true; // defino que por default la busqueda sea en todas las columnas de la tabla
   @Input() showPaginator: boolean = false;
+  @Input() definedColumns: any[] = [];
   @Input() data: any[] = [];
   @Input() pageSize: number = 4;
-  
+  @Input() isLoading: boolean = false;
+  @Input() errorData: boolean = false;
+  searchValue: string = '';
   currentPage = 1;
   /**
    * Propiedad que contiene los datos que se van a mostrar en la tabla
    */
   @Input() columns: any[] = [];
   @Output() rowClicked: EventEmitter<any> = new EventEmitter<any>();
-  
-  filteredData: any[] = []; // lo uso para que siempre sea el resultado de filtrar la data por cualquiera que sea el filtro
+
+  get filterColumns(){
+    return this.isGlobalFilter ?  
+          this.columns.filter((col: any) => col.type !== 'icon').map((col: any) => col.key) :
+          this.definedColumns;
+  }
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   /**
    * Método encargado de detectar cuando el usuario clickea un registro de la tabla, y en que columna, y emitir el mismo al componente padre
@@ -57,6 +63,15 @@ export class DynamicTableComponent implements OnInit {
           : (valueB as number) - (valueA as number);
       }
     });
+  }
+
+  /**
+   * Método encargado de limpiar el filtro de la tabla
+   * @param event 
+   */
+  clear(table: Table) {
+    this.searchValue = '';
+    table.clear();
   }
 
 }

@@ -11,7 +11,7 @@
                 <label for="password" class="form-label fst-italic">Contraseña</label>
                 <input id="password" type="password" class="form-control" formControlName="password">
               </div>
-              <ng-container *ngIf="failedLogin || true">
+              <ng-container *ngIf="failedLogin">
                 <div class="d-flex justify-content-center align-items-center mb-3">
                     <p-message severity="error" text="Email o Contraseña son incorrectos."></p-message>
                 </div>

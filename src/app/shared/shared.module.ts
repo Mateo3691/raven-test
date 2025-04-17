@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
+import { DialogModule } from 'primeng/dialog';
 import { MessageModule } from 'primeng/message';
 import { TableModule } from 'primeng/table';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
 
 
 @NgModule({
@@ -24,8 +25,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule,
     ButtonModule,
     TableModule,
+    FormsModule,
     ReactiveFormsModule,
-    MessageModule
+    MessageModule,
+    DialogModule,
+    ChartModule
   ],
   exports: [
     NavbarComponent,
@@ -33,7 +37,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule,
     ButtonModule,
     TableModule,
+    DialogModule,
     MessageModule,
+    ChartModule,
+    DoughnutChartComponent,
+    BarChartComponent,
     ReactiveFormsModule,
     DynamicTableComponent
   ]

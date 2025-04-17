@@ -6,8 +6,20 @@
                 Al clickear los registros tenes acceso a los detalles de cada uno en graficos estadísticos.
             </div>
         </div>
-        <div *ngIf="tableData" class="mt-5">
-            <app-dynamic-table [columns]="columns" [data]="tableData" (rowClicked)="onRowClicked($event)"></app-dynamic-table>
+        <div *ngIf="tableData && !errorData" class="mt-5">
+            <app-dynamic-table [isLoading]="isLoading" [canFilter]="true" [errorData]="errorData" 
+            [columns]="columns" [data]="tableData" (rowClicked)="onRowClicked($event)"></app-dynamic-table>
         </div>
     </div>
 </main>
+
+<p-dialog header="{{modalTitle}}" [(visible)]="showModal" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" 
+[style]="{width: '60%', height: 'auto'}" [modal]="true" [closeOnEscape]="true" [dismissableMask]="true" 
+[baseZIndex]="10000">
+    <ng-container *ngIf="tipoGrafico === 'bar'; else doughtnutGraph" >
+        <app-bar-chart [data]="selectedRowGraphData"></app-bar-chart>
+    </ng-container>
+    <ng-template #doughtnutGraph>
+        <app-doughnut-chart [data]="selectedRowGraphData"></app-doughnut-chart>
+    </ng-template>
+</p-dialog>
