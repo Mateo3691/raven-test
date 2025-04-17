@@ -43,10 +43,10 @@ Estos son los casos de pruebas que se pueden usar para loguearse
 
 Nombre  | Email             | Contraseña
 ------------------------------------------------
-Juan    | juan@mail.com     | 123456password
-Ana     | ana@mail.com      | 456789password
-Carlos  | carlos@mail.com   | 246810password
-Mateo   | mateo@mail.com    | 123456
+- Juan    | juan@mail.com     | 123456password
+- Ana     | ana@mail.com      | 456789password
+- Carlos  | carlos@mail.com   | 246810password
+- Mateo   | mateo@mail.com    | 123456
 
 ---
 
@@ -58,23 +58,26 @@ Componente reutilizable para mostrar tablas dinámicas con soporte para filtrado
 🔧 Parámetros de entrada (@Input())
 
 Propiedad | Tipo | Descripción
-title | string | Título visible de la tabla. (Default: 'Tabla dinámica')
-canFilter | boolean | Habilita o desactiva el filtrado de datos.
-isGlobalFilter | boolean | Si es true, filtra en todas las columnas (excepto las de tipo icon).
-showPaginator | boolean | Muestra el paginador al pie de la tabla.
-definedColumns | any[] | Columnas a aplicar filtro si isGlobalFilter está en false.
-columns | any[] | Estructura de columnas completa (clave, tipo, nombre, etc.).
-data | any[] | Conjunto de datos que se renderizan en la tabla.
-rowsPerPage | any[] | Conjunto que indica las posibles cantidades de registros por página. (Default: [10, 25, 5])
-rows | number | Cantidad de registros a mostrar inicialmente. (Default: 10)
-pageSize | number | Cantidad de registros por página. (Default: 4)
-isLoading | boolean | Muestra estado de carga (ej: spinner o skeleton).
-errorData | boolean | Permite mostrar mensajes o fallback en caso de error en los datos.
+-----------------------------------
+- title | string | Título visible de la tabla. (Default: 'Tabla dinámica')
+- canFilter | boolean | Habilita o desactiva el filtrado de datos.
+- isGlobalFilter | boolean | Si es true, filtra en todas las columnas (excepto las de tipo icon).
+- showPaginator | boolean | Muestra el paginador al pie de la tabla.
+- definedColumns | any[] | Columnas a aplicar filtro si isGlobalFilter está en false.
+- columns | any[] | Estructura de columnas completa (clave, tipo, nombre, etc.).
+- data | any[] | Conjunto de datos que se renderizan en la tabla.
+- rowsPerPage | any[] | Conjunto que indica las posibles cantidades de registros por página. (Default: [10, 25, 5])
+- rows | number | Cantidad de registros a mostrar inicialmente. (Default: 10)
+- pageSize | number | Cantidad de registros por página. (Default: 4)
+- isLoading | boolean | Muestra estado de carga (ej: spinner o skeleton).
+- errorData | boolean | Permite mostrar mensajes o fallback en caso de error en los datos.
 
 📤 Eventos de salida (@Output())
 
 Evento | Tipo | Descripción
-rowClicked | EventEmitter<any> | Se emite al hacer clic en una fila, retorna { product, key }.
+-----------------------------------
+- rowClicked | EventEmitter<any> | Se emite al hacer clic en una fila, retorna { product, key }.
+
 ⚙️ Funcionalidades
 customSort(event)
 Ordena los datos manualmente en base a field y order. Evita depender 100% del ordenamiento de PrimeNG.
@@ -96,13 +99,16 @@ Componente de navegación principal que muestra el estado de sesión, el nombre 
 🔧 Parámetros de entrada (@Input())
 
 Propiedad | Tipo | Descripción
-isUserLogged | boolean | Indica si hay un usuario autenticado. Muestra opciones según sesión activa.
-userName | string | Nombre del usuario logueado, mostrado en la barra.
+----------------------------------
+- isUserLogged | boolean | Indica si hay un usuario autenticado. Muestra opciones según sesión activa.
+- userName | string | Nombre del usuario logueado, mostrado en la barra.
+
 📤 Eventos de salida (@Output())
 
 Evento | Tipo | Descripción
-finishSession | EventEmitter<any> | Se emite al hacer clic en "Cerrar sesión".
-changeThemes | EventEmitter<any> | Se emite al hacer clic en el ícono de cambio de tema.
+-------------------------------
+- finishSession | EventEmitter<any> | Se emite al hacer clic en "Cerrar sesión".
+- changeThemes | EventEmitter<any> | Se emite al hacer clic en el ícono de cambio de tema.
 
 🧠 Funcionalidades
 changeTheme()
@@ -124,11 +130,14 @@ Componente que encapsula un gráfico de tipo doughnut (anillo) basado en PrimeNG
 🔧 Parámetros de entrada (@Input())
 
 Propiedad | Tipo | Descripción
-data | any | Datos del gráfico, en el formato aceptado por Chart.js y PrimeNG.
+---------------------------------
+- data | any | Datos del gráfico, en el formato aceptado por Chart.js y PrimeNG.
+
 📤 Eventos de salida (@Output())
 
 Evento | Tipo | Descripción
-selectDataEmitter | EventEmitter<any> | Se emite al seleccionar un dato del gráfico (clic en un segmento).
+-------------------------------
+-selectDataEmitter | EventEmitter<any> | Se emite al seleccionar un dato del gráfico (clic en un segmento).
 🧠 Funcionalidades
 selectData(data)
 Se ejecuta cuando el usuario hace clic en una sección del gráfico y emite la información relacionada (etiqueta, valor, etc.) al componente padre.
@@ -146,14 +155,16 @@ Componente de navegación principal que aparece en la parte superior de la aplic
 🔧 Parámetros de entrada (@Input())
 
 Propiedad | Tipo | Descripción
-isUserLogged | boolean | Define si el usuario está logueado. Permite mostrar opciones condicionales.
-userName | string | Nombre del usuario a mostrar en la barra de navegación.
+-------------------------------
+- isUserLogged | boolean | Define si el usuario está logueado. Permite mostrar opciones condicionales.
+- userName | string | Nombre del usuario a mostrar en la barra de navegación.
 
 📤 Eventos de salida (@Output())
 
 Evento | Tipo | Descripción
-finishSession | EventEmitter<any> | Se emite al hacer clic en “Cerrar sesión”.
-changeThemes | EventEmitter<any> | Se emite al hacer clic en el botón de cambio de tema.
+-----------------------------
+- finishSession | EventEmitter<any> | Se emite al hacer clic en “Cerrar sesión”.
+- changeThemes | EventEmitter<any> | Se emite al hacer clic en el botón de cambio de tema.
 
 🧠 Funcionalidades
 changeTheme()
