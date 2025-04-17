@@ -1,0 +1,57 @@
+@import './variables-light';
+
+body.light {
+  --primary-color: #{$primary-color};
+  --background-color: #{$background-color};
+  --nav-background-color: #{$nav-background-color};
+  --card-background: #{$card-background};
+  --text-color: #{$text-color};
+  --border-color: #{$border-color};
+
+  // Inputs
+  --input-bg: #{$input-bg};
+  --input-border: #{$input-border};
+  --input-text: #{$input-text};
+  --input-placeholder: #{$input-placeholder};
+  --input-hover-border: #{$input-hover-border};
+  --input-focus-border: #{$input-focus-border};
+  --input-disabled-bg: #{$input-disabled-bg};
+  --input-disabled-text: #{$input-disabled-text};
+
+  // Botones
+  --btn-primary-bg: #{$btn-primary-bg};
+  --btn-primary-text: #{$btn-primary-text};
+  --btn-primary-hover-bg: #{$btn-primary-hover-bg};
+  --btn-primary-focus-ring: #{$btn-primary-focus-ring};
+  --btn-primary-disabled-bg: #{$btn-primary-disabled-bg};
+  --btn-primary-disabled-text: #{$btn-primary-disabled-text};
+}
+
+@import './variables-dark';
+
+body.dark {
+  --primary-color: #{$primary-color};
+  --background-color: #{$background-color};
+  --nav-background-color: #{$nav-background-color};
+  --card-background: #{$card-background};
+  --text-color: #{$text-color};
+  --border-color: #{$border-color};
+
+  // Inputs
+  --input-bg: #{$input-bg};
+  --input-border: #{$input-border};
+  --input-text: #{$input-text};
+  --input-placeholder: #{$input-placeholder};
+  --input-hover-border: #{$input-hover-border};
+  --input-focus-border: #{$input-focus-border};
+  --input-disabled-bg: #{$input-disabled-bg};
+  --input-disabled-text: #{$input-disabled-text};
+
+  // Botones
+  --btn-primary-bg: #{$btn-primary-bg};
+  --btn-primary-text: #{$btn-primary-text};
+  --btn-primary-hover-bg: #{$btn-primary-hover-bg};
+  --btn-primary-focus-ring: #{$btn-primary-focus-ring};
+  --btn-primary-disabled-bg: #{$btn-primary-disabled-bg};
+  --btn-primary-disabled-text: #{$btn-primary-disabled-text};
+}

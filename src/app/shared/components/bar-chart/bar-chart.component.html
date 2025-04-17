@@ -1,1 +1,1 @@
-<p-chart type="bar" [data]="data" [options]="configOptions"></p-chart>
+<p-chart type="bar" [data]="data" (onDataSelect)="selectData($event)"></p-chart>

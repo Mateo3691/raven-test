@@ -1,13 +1,13 @@
-<main class="outlet-height">
+<main class="outlet-height dashboard-section">
     <div class="p-5">
         <div class="title-dashboard text-center">
             <h2 class="fst-italic text-muted">Datos de prueba</h2>
-            <div class="fst-italic font-weight-light">
+            <h4 class="fst-italic font-weight-light">
                 Al clickear los registros tenes acceso a los detalles de cada uno en graficos estadísticos.
-            </div>
+            </h4>
         </div>
         <div *ngIf="tableData && !errorData" class="mt-5">
-            <app-dynamic-table [isLoading]="isLoading" [canFilter]="true" [errorData]="errorData" 
+            <app-dynamic-table [showPaginator]="true" [isLoading]="isLoading" [rowsPerPage]="[10,25,5]" [rows]="5" [canFilter]="true" [errorData]="errorData" 
             [columns]="columns" [data]="tableData" (rowClicked)="onRowClicked($event)"></app-dynamic-table>
         </div>
     </div>

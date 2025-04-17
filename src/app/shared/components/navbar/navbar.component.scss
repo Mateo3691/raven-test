@@ -1,6 +1,15 @@
-nav {
+.buttons-section {
     height: 6rem;
-    background-color: red;
+    background-color: var(--nav-background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: flex-end;
+    h3 {
+        color: var(--primary-color);
+    }
+}
+
+button {
+    font-size: 2.5rem;
+    margin: .0rem .5rem;
 }

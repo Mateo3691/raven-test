@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Table } from 'primeng/table';
 
+/**
+ * Componente encargado de mostrar una tabla dinámica, con la posibilidad de filtrar, paginar y ordenar los registros
+ */
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
@@ -8,11 +11,13 @@ import { Table } from 'primeng/table';
 })
 export class DynamicTableComponent {
 
-  @Input() title: string = '';
+  @Input() title: string = 'Tabla dinámica';
   @Input() canFilter: boolean = false;
   @Input() isGlobalFilter: boolean = true; // defino que por default la busqueda sea en todas las columnas de la tabla
   @Input() showPaginator: boolean = false;
   @Input() definedColumns: any[] = [];
+  @Input() rowsPerPage: any[] = [10,25,5];
+  @Input() rows: number = 10;
   @Input() data: any[] = [];
   @Input() pageSize: number = 4;
   @Input() isLoading: boolean = false;

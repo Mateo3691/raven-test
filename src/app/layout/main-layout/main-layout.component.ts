@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
+import { ThemesService } from '../../core/services/themes.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -8,7 +9,7 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class MainLayoutComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private themesService: ThemesService) { }
 
   get userName(){
     return this.authService.user;
@@ -27,8 +28,7 @@ export class MainLayoutComponent implements OnInit {
    * @returns void
    */
   changeColorTheme(){
-    const body = document.body;
-    body.classList.toggle('dark-theme');
+    this.themesService.toggleTheme();
   }
 
   /**
@@ -37,8 +37,6 @@ export class MainLayoutComponent implements OnInit {
    */
   logOutUser(){
     this.authService.logOut();
-    // al recargar y querer entrar nuevamente ya se activa el guard de la ruta, y si no hay un usuario logueado, lo redirige al login
-    window.location.reload();
   }
 
 }

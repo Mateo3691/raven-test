@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+
+  @Input() isUserLogged: boolean = false;
+  @Input() userName: string = "";
+  @Output() finishSession: EventEmitter<any> = new EventEmitter<any>();
+  @Output() changeThemes: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
-  ngOnInit(): void {
+  get iconThemeName(): string {
+    return localStorage.getItem('theme') === 'dark' ? 'pi pi-sun' : 'pi pi-moon';
   }
 
   /**
@@ -18,7 +24,7 @@ export class NavbarComponent implements OnInit {
    * @returns {void}
    */
   changeTheme(): void {
-
+    this.changeThemes.emit();
   }
 
   /**
@@ -26,7 +32,7 @@ export class NavbarComponent implements OnInit {
    * @returns {void}
    */
   terminarSesion(): void {
-
+    this.finishSession.emit();
   }
 
 }

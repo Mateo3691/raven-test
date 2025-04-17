@@ -1,10 +1,11 @@
 <div *ngIf="!isLoading" class="card">
-    <p-table #dt1 responsiveLayout="scroll" [value]="data" (sortFunction)="customSort($event)" [customSort]="true" [globalFilterFields]="filterColumns">
+    <p-table #dt1 [paginator]="showPaginator" [rows]="rows" [showCurrentPageReport]="true" responsiveLayout="scroll"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="rowsPerPage" [value]="data" (sortFunction)="customSort($event)" [customSort]="true" [globalFilterFields]="filterColumns">
         <ng-template *ngIf="canFilter" pTemplate="caption">
             <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                    <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                    <button (click)="clear(dt1)" class="btn btn-primary">Limpiar</button>
                     <span class="p-input-icon-left p-ml-auto">
-                        <input pInputText type="text" [(ngModel)]="searchValue" (input)="dt1.filterGlobal(searchValue, 'contains')" placeholder="Buscar" />
+                        <input type="text" [(ngModel)]="searchValue" (input)="dt1.filterGlobal(searchValue, 'contains')" placeholder="Buscar" />
                     </span>
             </div>
         </ng-template>

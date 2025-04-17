@@ -67,12 +67,15 @@ export class DashboardComponent implements OnInit {
     },  (err) => {
       this.errorData = true;
       this.loadingData = false;
-      console.log("Error", err);
     })
   }
 
+  /**
+   * Dependiendo del icono que se haya presionado en la tabla de datos, en este componente se abrirá un modal con el grafico correspondiente
+   * y se mostrara la data correspondiente a ese grafico
+   * @param data 
+   */
   onRowClicked(data: any): void{
-    console.log("DATA",data);
     const {product, key} = data;
     if(key === "ventas_mensuales" || key === "comp_product"){
       this.modalTitle = key === "ventas_mensuales" ? "Ventas mensuales" : "Comparación de productos";

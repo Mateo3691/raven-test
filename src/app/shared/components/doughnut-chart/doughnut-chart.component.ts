@@ -6,8 +6,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./doughnut-chart.component.scss']
 })
 export class DoughnutChartComponent{
-
-  @Input() configOptions: any = {};
   @Input() data: any = {};
   @Output() selectDataEmitter: EventEmitter<any> = new EventEmitter<any>();
 

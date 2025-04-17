@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { MOCK_USERS } from '../../data-mocks/users-casos';
@@ -12,7 +13,7 @@ export class AuthService {
   isLogged: boolean = false;
   user: string = ''; // En esta variable guardo el nombre del usuario para usarlo 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   get isUserLogged(): boolean {
     return this.isLogged;
@@ -47,5 +48,6 @@ export class AuthService {
   logOut(): void {
     this.isLogged = false;
     this.user = '';
+    this.router.navigate(['/login'])
   }
 }
